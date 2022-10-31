@@ -5,7 +5,7 @@ const router = new Router({
 });
 
 router.get('/model1', ctx => {
-    ctx.body = 'product1'
+    ctx.body = 'model1'
     let connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -25,6 +25,7 @@ router.get('/model1', ctx => {
         connection.query(model1, function(err, result){
             if (err) throw err;
             // console.log(result)
+            
             let queryValues = [];
             result.forEach(item => {
                 queryValues.push({
@@ -35,10 +36,12 @@ router.get('/model1', ctx => {
                 console.log(queryValues)   
                 })
             });
+            
         });
         // connection.end();
     }; 
-    queryFunc()  
+    queryFunc()
+    
 });
 
 router.get('/model2', ctx => {
@@ -117,6 +120,16 @@ router.get('/model3', ctx => {
     
 });
 
+let models = [
+    {model: 'model1', price:1000, description: 'Sykkel med gode egenskaper - for deg som vil ha kvalitet og god pris'},
+    {model: 'model2', price:1700, description: 'For deg som ønsker bedre kvalitet og som ønsker fart og spenning'},
+    {model: 'model3', price:25000, description: 'Vår beste sykkel - kompromissløs - for deg som ønsker det beste'}
+]
+let bicycles = JSON.stringify(models)
+
+router.get ('/models', ctx => {
+    ctx.body = bicycles
+})
 
 router.post('/', ctx => {
     ctx.body = 'Test2 - post'
