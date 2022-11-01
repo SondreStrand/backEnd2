@@ -1,8 +1,11 @@
 const Router = require('@koa/router');
 let mysql = require('mysql')
+const cors = require ('@koa/cors');
 const router = new Router({
     prefix: '/store'
 });
+
+router.use (cors())
 
 router.get('/model1', ctx => {
     ctx.body = 'model1'
