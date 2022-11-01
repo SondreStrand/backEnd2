@@ -124,8 +124,8 @@ router.get('/model3', ctx => {
 });
 
 let models = [
-    {model: 'model1', price:1000, description: 'Sykkel med gode egenskaper - for deg som vil ha kvalitet og god pris'},
-    {model: 'model2', price:1700, description: 'For deg som ønsker bedre kvalitet og som ønsker fart og spenning'},
+    {model: 'model1', price:10000, description: 'Sykkel med gode egenskaper - for deg som vil ha kvalitet og god pris'},
+    {model: 'model2', price:17000, description: 'For deg som ønsker bedre kvalitet og som ønsker fart og spenning'},
     {model: 'model3', price:25000, description: 'Vår beste sykkel - kompromissløs - for deg som ønsker det beste'}
 ]
 let bicycles = JSON.stringify(models)
