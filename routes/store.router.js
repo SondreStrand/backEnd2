@@ -11,7 +11,7 @@ let connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'contactformdatabase'
+    database: 'bicycleshopdatabase'
 });
     
 var connectDbFunc =  () => {
